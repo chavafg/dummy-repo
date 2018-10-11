@@ -1,13 +1,9 @@
-pipeline {
-        agent { label 'ubuntu-1604' }
-        stages {
+@Library("chavafg-dummy-repo@PR-2")_
 
-                stage('Setup repo environment') {
-                        steps {
-				sh 'echo get env variables'
-				sh 'env'
-                        }
-                }
+library "chavafg-dummy-repo@$BRANCH_NAME"
 
-	}
+stage('Demo') {
+	echo 'Hello World'
+	sayHello 'Dave'
+	env
 }
